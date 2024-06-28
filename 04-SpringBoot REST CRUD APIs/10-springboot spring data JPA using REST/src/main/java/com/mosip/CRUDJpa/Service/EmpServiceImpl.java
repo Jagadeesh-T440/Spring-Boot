@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import com.mosip.CRUDJpa.DAO.EmpRepository;
 import com.mosip.CRUDJpa.Entity.Employee;
 
-import jakarta.transaction.Transactional;
-
 @Service
 public class EmpServiceImpl implements EmpService{
 
@@ -29,15 +27,16 @@ public class EmpServiceImpl implements EmpService{
 		
 		Optional<Employee> result=empRepository.findById(theId);
 		
-		//Employee theEmployee=null;
+		Employee theEmployee=null;
 		
 		if(result.isPresent()) {
-			return result.get();
+			theEmployee=result.get();
 		}
 		else {
 			throw new RuntimeException("Didn't find emp_id - "+theId);
 		}
-		
+				
+		return theEmployee;
 	}
 
 	@Override

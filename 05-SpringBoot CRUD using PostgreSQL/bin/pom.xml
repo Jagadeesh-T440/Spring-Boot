@@ -8,11 +8,11 @@
 		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mosip</groupId>
-	<artifactId>CRUDJpa</artifactId>
+	<groupId>com.PostgreSQL</groupId>
+	<artifactId>ConnectPsql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CRUDJpa</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ConnectPsql</name>
+	<description>Connect PostgreSQL in Spring boor</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -38,11 +38,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-    		<groupId>org.postgresql</groupId>
-		    <artifactId>postgresql</artifactId>
-    		<version>42.7.3</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -50,8 +46,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>

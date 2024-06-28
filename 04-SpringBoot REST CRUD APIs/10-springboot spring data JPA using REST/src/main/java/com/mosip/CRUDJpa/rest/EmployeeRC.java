@@ -1,7 +1,6 @@
 package com.mosip.CRUDJpa.rest;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,11 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mosip.CRUDJpa.Entity.Employee;
 import com.mosip.CRUDJpa.Service.EmpService;
 
-
 @RestController
 @RequestMapping("/api")
 public class EmployeeRC {
-
+	
 	private EmpService empService;
 	
 	public EmployeeRC(EmpService theEmpService) {
@@ -35,10 +33,6 @@ public class EmployeeRC {
 	public Employee getEmployee(@PathVariable int employeeId ) {
 		
 		Employee theEmployee=empService.findById(employeeId);
-		if(theEmployee==null) {
-			throw new RuntimeException("Employee id not found - "+ employeeId);
-		}
-		
 		return theEmployee;
 		
 	}
@@ -55,11 +49,8 @@ public class EmployeeRC {
 	public Employee putEmployee(@RequestBody Employee theEmployee) {
 		
 		int id=theEmployee.getId();
-		Employee dbEmployee=empService.findById(id);
+		empService.findById(id);
 		
-		if(dbEmployee==null) {
-			throw new RuntimeException("Employee id not found - "+ id);
-		}
 		Employee employee = empService.save(theEmployee);
 		return employee;
 	}
